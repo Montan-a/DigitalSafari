@@ -8,6 +8,7 @@ const isAdminOrHasAccessToImages =
 
     if (!user) return false;
     if (user.role === "admin") return true;
+
     return {
       user: {
         equals: req.user.id,
@@ -27,6 +28,7 @@ export const Media: CollectionConfig = {
   access: {
     read: async ({ req }) => {
       const referer = req.headers.referer;
+
       if (!req.user || !referer?.includes("sell")) {
         return true;
       }
@@ -47,22 +49,22 @@ export const Media: CollectionConfig = {
         name: "thumbnail",
         width: 400,
         height: 300,
-        position: "center",
+        position: "centre",
       },
       {
         name: "card",
         width: 768,
         height: 1024,
-        position: "center",
+        position: "centre",
       },
       {
         name: "tablet",
         width: 1024,
         height: undefined,
-        position: "center",
+        position: "centre",
       },
     ],
-    mimeTypes: ["images/*"],
+    mimeTypes: ["image/*"],
   },
   fields: [
     {
