@@ -10,7 +10,7 @@ export const appRouter = router({
   getInfiniteProducts: publicProcedure
     .input(
       z.object({
-        limit: z.number().min(1).max(10),
+        limit: z.number().min(1).max(100),
         cursor: z.number().nullish(),
         query: QueryValidator,
       })
