@@ -51,7 +51,7 @@ const NavItem = ({ isAnyOpen, isOpen, handleOpen, category }: NavItemProps) => {
                 <div className="col-span-4 col-start-1 grid grid-cols-3 gap-x-8">
                   {category.featured.map((item) => (
                     <div
-                      key={item.name}
+                      key={item.href}
                       className="group relative text-base sm:text-sm"
                     >
                       <div className="relative aspect-video overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">

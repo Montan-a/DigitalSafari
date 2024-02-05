@@ -54,7 +54,7 @@ export const Products: CollectionConfig = {
     },
     {
       name: "approvedForSale",
-      label: "Product Satus",
+      label: "Product Status",
       type: "select",
       defaultValue: "pending",
       access: {
