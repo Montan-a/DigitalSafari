@@ -26,7 +26,7 @@ const AddtoCartButton = ({ product }: { product: Product }) => {
       size="lg"
       className="w-full"
     >
-      {isSuccess ? "Added!" : "Added to Cart"}
+      {isSuccess ? "Added!" : "Add to Cart"}
     </Button>
   );
 };
