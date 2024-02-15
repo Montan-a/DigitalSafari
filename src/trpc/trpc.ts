@@ -3,7 +3,6 @@ import { ExpressContext } from "@/server";
 import { TRPCError, initTRPC } from "@trpc/server";
 import { User } from "payload/dist/auth";
 import { PayloadRequest } from "payload/types";
-import { toast } from "sonner";
 
 const t = initTRPC.context<ExpressContext>().create();
 const middleware = t.middleware;
