@@ -48,7 +48,9 @@ const VerifyEmail = ({ token }: VerifyEmailProps) => {
       <div className="flex flex-col items-center gap-2">
         <Loader2 className="animate-spin h-8 w-8 text-zinc-300" />
         <h3 className="font-semibold text-xl">Verify...</h3>
-        <p className="text-muted-forground text-sm">This won't take long.</p>
+        <p className="text-muted-forground text-sm">
+          This won&apso;t take long.
+        </p>
       </div>
     );
   }
