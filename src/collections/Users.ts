@@ -1,4 +1,16 @@
-import { CollectionConfig } from "payload/types";
+import { Access, CollectionConfig } from "payload/types";
+
+const adminsAndUser: Access = ({ req: { user } }) => {
+  if (user.role === "admin") {
+    return true;
+  }
+
+  return {
+    id: {
+      equals: user.id,
+    },
+  };
+};
 
 export const Users: CollectionConfig = {
   slug: "users",
@@ -10,8 +22,14 @@ export const Users: CollectionConfig = {
     },
   },
   access: {
-    read: () => true,
+    read: adminsAndUser,
     create: () => true,
+    update: ({ req }) => req.user.role === "admin",
+    delete: ({ req }) => req.user.role === "admin",
+  },
+  admin: {
+    hidden: ({ user }) => user.role !== "admin",
+    defaultColumns: ["id"],
   },
   fields: [
     {
