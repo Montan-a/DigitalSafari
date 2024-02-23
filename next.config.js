@@ -10,7 +10,8 @@ const nextConfig = {
       },
       {
         hostname: "digitalsafari-production.up.railway.app",
-
+        pathname: "**",
+        port: "*",
         protocol: "https",
       },
     ],
